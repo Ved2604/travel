@@ -1,115 +1,187 @@
-import Image from "next/image";
-import localFont from "next/font/local";
+import React from "react";
+import { Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-export default function Home() {
+export default function FlightSearchPage() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen flex flex-col items-center pt-[12vh] bg-gray-50 pl-14 ml-8 ">
+      <div className="w-full max-w-[1200px] space-y-12">
+        <h1 className="text-[40px] text-center font-medium text-gray-900 font-sans">
+          Good afternoon, Brian
+        </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="bg-white rounded-lg border border-gray-100 shadow-lg p-8 h-[300px] mb-4">
+          <div className="space-y-8">
+            <div className="flex items-center space-x-2 bg-gray-100 w-28 rounded-md">
+              <div className="text-sm px-8 py-3 font-semibold text-black font-serif">
+                Flights
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr,1fr,1fr] gap-4 items-start">
+              <Select>
+                <SelectTrigger className="h-[64px] bg-white border-gray-200">
+                  <div className="flex items-center">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mr-2 text-gray-400"
+                    >
+                      <path
+                        d="M17.5 17.5L12.5 12.5M14.1667 8.33333C14.1667 11.555 11.555 14.1667 8.33333 14.1667C5.11167 14.1667 2.5 11.555 2.5 8.33333C2.5 5.11167 5.11167 2.5 8.33333 2.5C11.555 2.5 14.1667 5.11167 14.1667 8.33333Z"
+                        stroke="currentColor"
+                        strokeWidth="1.66667"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <SelectValue
+                      placeholder="Where from?"
+                      className="text-gray-100 font-light font-mono"
+                    />
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="nyc">New York</SelectItem>
+                  <SelectItem value="lon">London</SelectItem>
+                  <SelectItem value="par">Paris</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <div className="flex items-center justify-center w-10 h-10 bg-gray-50 rounded-full shrink-0 mt-2">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.66669 11.3333L13.3334 4.66666M13.3334 4.66666L8.00002 4.66666M13.3334 4.66666L13.3334 9.99999"
+                    stroke="#667085"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <Select>
+                <SelectTrigger className="h-[64px] bg-white border-gray-200">
+                  <div className="flex items-center">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mr-2 text-gray-400"
+                    >
+                      <path
+                        d="M17.5 17.5L12.5 12.5M14.1667 8.33333C14.1667 11.555 11.555 14.1667 8.33333 14.1667C5.11167 14.1667 2.5 11.555 2.5 8.33333C2.5 5.11167 5.11167 2.5 8.33333 2.5C11.555 2.5 14.1667 5.11167 14.1667 8.33333Z"
+                        stroke="currentColor"
+                        strokeWidth="1.66667"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <SelectValue
+                      placeholder="Where to?"
+                      className="text-gray-100 font-light font-mono"
+                    />
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="tok">Tokyo</SelectItem>
+                  <SelectItem value="sin">Singapore</SelectItem>
+                  <SelectItem value="dub">Dubai</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <Select>
+                <SelectTrigger className="h-[64px] bg-white border-gray-200">
+                  <div className="flex items-center">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mr-2 text-gray-400"
+                    >
+                      <path
+                        d="M6.66669 1.66666V4.16666M13.3334 1.66666V4.16666M2.91669 7.58333H17.0834M4.16669 3.33333H15.8334C16.7538 3.33333 17.5 4.07952 17.5 5V16.6667C17.5 17.5871 16.7538 18.3333 15.8334 18.3333H4.16669C3.24621 18.3333 2.50002 17.5871 2.50002 16.6667V5C2.50002 4.07952 3.24621 3.33333 4.16669 3.33333Z"
+                        stroke="currentColor"
+                        strokeWidth="1.66667"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <SelectValue
+                      placeholder="Departure"
+                      className="text-gray-100 font-light font-mono"
+                    />
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="today">Today</SelectItem>
+                  <SelectItem value="tomorrow">Tomorrow</SelectItem>
+                  <SelectItem value="nextweek">Next Week</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <Select>
+                <SelectTrigger className="h-[64px] bg-white border-gray-200">
+                  <div className="flex items-center">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mr-2 text-gray-400"
+                    >
+                      <path
+                        d="M6.66669 1.66666V4.16666M13.3334 1.66666V4.16666M2.91669 7.58333H17.0834M4.16669 3.33333H15.8334C16.7538 3.33333 17.5 4.07952 17.5 5V16.6667C17.5 17.5871 16.7538 18.3333 15.8334 18.3333H4.16669C3.24621 18.3333 2.50002 17.5871 2.50002 16.6667V5C2.50002 4.07952 3.24621 3.33333 4.16669 3.33333Z"
+                        stroke="currentColor"
+                        strokeWidth="1.66667"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <SelectValue
+                      placeholder="Return"
+                      className="text-gray-100 font-light font-mono"
+                    />
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="oneweek">In 1 Week</SelectItem>
+                  <SelectItem value="twoweeks">In 2 Weeks</SelectItem>
+                  <SelectItem value="noreturn">No Return</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="flex justify-end pt-4">
+              <Button className="w-[300px] bg-[#004953] hover:bg-[#003940] h-12">
+                <Search className="mr-2 h-5 w-5" />
+                <span className="font-light">Search flights</span>
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
