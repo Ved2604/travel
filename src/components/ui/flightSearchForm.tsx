@@ -16,10 +16,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import useDepartureDate from "@/hooks/useDepartureDate";
-import useReturnDate from "@/hooks/useReturnDate";
-import useFlightSource from "@/hooks/useFlightSource";
-import useFlightDestination from "@/hooks/useFlightDestination";
+
 import airports from "@/constants/airports";
 import { useRouter } from "next/router";
 import { Airport } from "@/hooks/useFlightSource";
