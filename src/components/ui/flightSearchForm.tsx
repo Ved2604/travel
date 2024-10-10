@@ -28,12 +28,12 @@ interface FlightSearchProps {
   retDate?: Date | null;
 }
 
-export const FlightSearchForm: React.FC = ({
+export const FlightSearchForm: React.FC<FlightSearchProps> = ({
   src,
   dest,
   depDate,
   retDate,
-}: FlightSearchProps) => {
+}) => {
   const [departureDate, setDepartureDate] = useState<Date | null>(
     depDate ?? null
   );

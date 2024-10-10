@@ -147,7 +147,12 @@ export default function FlightSearchPage() {
             }}
           >
             <div className="p-6 border-gray-400 border-b-2">
-              <FlightSearchForm />
+              <FlightSearchForm
+                depDate={departureDate}
+                retDate={returnDate}
+                src={source}
+                dest={destination}
+              />
             </div>
             <div className="flex justify-end mt-4">
               <Button
