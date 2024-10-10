@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function useDepartureDate() {
   const [departureDate, setDepartureDate] = useState<Date | null>(null);

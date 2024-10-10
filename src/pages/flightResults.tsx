@@ -5,10 +5,7 @@ import { FlightSearchForm } from "@/components/ui/flightSearchForm";
 import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
 import LoadingState from "@/components/ui/LoadingState";
-import useDepartureDate from "@/hooks/useDepartureDate";
-import useReturnDate from "@/hooks/useReturnDate";
-import useFlightSource from "@/hooks/useFlightSource";
-import useFlightDestination from "@/hooks/useFlightDestination";
+
 import { format } from "date-fns";
 import airports from "@/constants/airports";
 import { Airport } from "@/hooks/useFlightSource";

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import airports from "@/constants/airports";
+import { useState } from "react";
+
 // Define the type for Airport
 export interface Airport {
   name: string;
