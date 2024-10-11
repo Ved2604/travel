@@ -135,11 +135,7 @@ const FlightCard = ({
           {/* First Flight */}
           <div>
             <div className="flex items-center mb-4">
-              <img
-                src="/api/placeholder/32/32"
-                alt="Emirates"
-                className="w-8 h-8 mr-3"
-              />
+              <Plane className="w-8 h-8 text-blue-600 mr-3" />
               <div>
                 <p className="font-semibold text-gray-900">
                   Emirates • AT 4334
@@ -197,11 +193,7 @@ const FlightCard = ({
           {/* Second Flight - with the same dotted line structure */}
           <div>
             <div className="flex items-center mb-4">
-              <img
-                src="/api/placeholder/32/32"
-                alt="Emirates"
-                className="w-8 h-8 mr-3"
-              />
+              <Plane className="w-8 h-8 text-blue-600 mr-3" />
               <div>
                 <p className="font-semibold text-gray-900">
                   Emirates • AT 4334
