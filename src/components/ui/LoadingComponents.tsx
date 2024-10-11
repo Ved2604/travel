@@ -81,8 +81,8 @@ const LoadingDialog = () => (
       </div>
       <div className="space-y-4">
         <LoadingItem text="Searching 400+ flights" delay={2} />
-        <LoadingItem text="Attaching company rules" delay={6} />
-        <LoadingItem text="Serving best results" delay={12} />
+        <LoadingItem text="Attaching company rules" delay={4} />
+        <LoadingItem text="Serving best results" delay={6} />
       </div>
     </div>
   </div>

@@ -175,12 +175,54 @@ export default function FlightSearchPage() {
             Showing 356 of 767 results
           </p>
           <div className="space-y-4 ml-48 mr-28">
-            <FlightCard />
-            <FlightCard />
-            <FlightCard />
-            <FlightCard />
-            <FlightCard />
-            <FlightCard />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
           </div>
         </div>
       )}

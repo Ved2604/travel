@@ -75,10 +75,10 @@ export const FlightSearchForm: React.FC<FlightSearchProps> = ({
     if (departureDate) queryParams.set("dep", departureDate.toISOString());
     if (returnDate) queryParams.set("ret", returnDate.toISOString());
 
-    const currentPath = router.pathname;
-    const newPath = currentPath === "/" ? "/flightResults" : currentPath;
+    const currentPath = "/flightResults";
+    const newUrl = `${currentPath}?${queryParams.toString()}`; // Build the new URL with params
 
-    router.push(`${newPath}?${queryParams.toString()}`);
+    window.location.href = newUrl; // Full reload with new params
   }
 
   return (

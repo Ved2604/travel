@@ -9,8 +9,41 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Clock, ArrowLeft } from "lucide-react";
+import { Airport } from "@/hooks/useFlightSource";
 
-const FlightCard = () => {
+interface FlightCardProps {
+  source: Airport | null;
+  destination: Airport | null;
+  departureDate: Date | null;
+  returnDate: Date | null;
+}
+
+const FlightCard = ({
+  source,
+  destination,
+  departureDate,
+  returnDate,
+}: FlightCardProps) => {
+  const getNextDay = (date: Date | null) => {
+    if (!date) return null;
+    const nextDay = new Date(date);
+    nextDay.setDate(nextDay.getDate() + 1);
+    return nextDay;
+  };
+
+  // Calculate the day after departure
+  const dayAfterDeparture = getNextDay(departureDate);
+
+  // Function to format date as "Day DD Month"
+  const formatDate = (date: Date | null) => {
+    if (!date) return "";
+    return date.toLocaleDateString("en-US", {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+    });
+  };
+
   return (
     <Sheet>
       <Card className="w-full bg-white">
@@ -34,7 +67,7 @@ const FlightCard = () => {
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900">
-                    CDG - DXB
+                    {source?.code} - {destination?.code}
                   </p>
                   <p className="text-base text-gray-600">2h 10min</p>
                 </div>
@@ -65,7 +98,7 @@ const FlightCard = () => {
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900">
-                    DXB - CDG
+                    {destination?.code}-{source?.code}
                   </p>
                   <p className="text-base text-gray-600">4h 10min</p>
                 </div>
@@ -133,13 +166,13 @@ const FlightCard = () => {
                 <div className="absolute left-0 top-2 w-2 h-2 -ml-[4.5px] rounded-full bg-gray-300"></div>
                 <div className="flex-shrink-0 w-24 ml-6">
                   <p className="font-semibold text-gray-900">2:15</p>
-                  <p className="text-sm text-gray-500">Sat 28 Sept</p>
+                  <p className="text-sm text-gray-500">
+                    {formatDate(departureDate)}
+                  </p>
                 </div>
                 <div className="flex-grow">
-                  <p className="font-semibold text-gray-900">
-                    Dubai International Airport
-                  </p>
-                  <p className="text-sm text-gray-500">DXB</p>
+                  <p className="font-semibold text-gray-900">{source?.name}</p>
+                  <p className="text-sm text-gray-500">{source?.code}</p>
                 </div>
               </div>
 
@@ -152,7 +185,9 @@ const FlightCard = () => {
                 <div className="absolute left-0 bottom-2 w-2 h-2 -ml-[4.5px] rounded-full bg-gray-300"></div>
                 <div className="flex-shrink-0 w-24 ml-6">
                   <p className="font-semibold text-gray-900">2:15</p>
-                  <p className="text-sm text-gray-500">Sat 28 Sept</p>
+                  <p className="text-sm text-gray-500">
+                    {formatDate(dayAfterDeparture)}
+                  </p>
                 </div>
                 <div className="flex-grow">
                   <p className="font-semibold text-gray-900">
@@ -193,7 +228,9 @@ const FlightCard = () => {
                 <div className="absolute left-0 top-2 w-2 h-2 -ml-[4.5px] rounded-full bg-gray-300"></div>
                 <div className="flex-shrink-0 w-24 ml-6">
                   <p className="font-semibold text-gray-900">2:15</p>
-                  <p className="text-sm text-gray-500">Sat 28 Sept</p>
+                  <p className="text-sm text-gray-500">
+                    {formatDate(dayAfterDeparture)}
+                  </p>
                 </div>
                 <div className="flex-grow">
                   <p className="font-semibold text-gray-900">
@@ -207,13 +244,15 @@ const FlightCard = () => {
                 <div className="absolute left-0 bottom-2 w-2 h-2 -ml-[4.5px] rounded-full bg-gray-300"></div>
                 <div className="flex-shrink-0 w-24 ml-6">
                   <p className="font-semibold text-gray-900">2:15</p>
-                  <p className="text-sm text-gray-500">Sat 28 Sept</p>
+                  <p className="text-sm text-gray-500">
+                    {formatDate(dayAfterDeparture)}
+                  </p>
                 </div>
                 <div className="flex-grow">
                   <p className="font-semibold text-gray-900">
-                    Paris Charles de Gaulle Airport
+                    {destination?.name}
                   </p>
-                  <p className="text-sm text-gray-500">CDG</p>
+                  <p className="text-sm text-gray-500">{destination?.code}</p>
                 </div>
               </div>
             </div>
