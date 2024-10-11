@@ -76,7 +76,7 @@ export default function FlightSearchPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 8000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, []);

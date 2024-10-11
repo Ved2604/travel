@@ -7,7 +7,7 @@ const LoadingProgressBar = () => (
       className="absolute top-0 left-0 h-full bg-blue-600"
       initial={{ width: "0%" }}
       animate={{ width: "100%" }}
-      transition={{ duration: 2, ease: "easeInOut", repeat: 20 }}
+      transition={{ duration: 2, ease: "easeInOut", repeat: 40 }}
     />
   </div>
 );
@@ -81,8 +81,8 @@ const LoadingDialog = () => (
       </div>
       <div className="space-y-4">
         <LoadingItem text="Searching 400+ flights" delay={2} />
-        <LoadingItem text="Attaching company rules" delay={4} />
-        <LoadingItem text="Serving best results" delay={6} />
+        <LoadingItem text="Attaching company rules" delay={6} />
+        <LoadingItem text="Serving best results" delay={10} />
       </div>
     </div>
   </div>
