@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const LoadingProgressBar = () => (
-  <div className="relative w-full h-2 bg-blue-400 mt-36">
+  <div className="relative w-full h-2 bg-blue-400 mt-32">
     <motion.div
       className="absolute top-0 left-0 h-full bg-blue-600"
       initial={{ width: "0%" }}

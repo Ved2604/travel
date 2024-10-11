@@ -174,7 +174,19 @@ export default function FlightSearchPage() {
           <p className="text-sm text-gray-500 mb-4 ml-48">
             Showing 356 of 767 results
           </p>
-          <div className="space-y-4 ml-48 mr-28">
+          <div className="space-y-4 ml-48 mr-28 mb-4">
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
+            <FlightCard
+              source={source}
+              destination={destination}
+              departureDate={departureDate}
+              returnDate={returnDate}
+            />
             <FlightCard
               source={source}
               destination={destination}

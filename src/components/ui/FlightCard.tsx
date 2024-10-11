@@ -8,7 +8,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import { Clock, ArrowLeft } from "lucide-react";
+import { Clock, ArrowLeft, Plane } from "lucide-react";
 import { Airport } from "@/hooks/useFlightSource";
 
 interface FlightCardProps {
@@ -53,11 +53,7 @@ const FlightCard = ({
               {/* First flight */}
               <div className="col-span-4 grid grid-cols-4 gap-6 mb-6">
                 <div className="flex justify-center">
-                  <img
-                    src="/api/placeholder/32/32"
-                    alt="Emirates logo"
-                    className="w-8 h-8"
-                  />
+                  <Plane className="w-8 h-8 text-blue-600 mr-3" />
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900">
@@ -81,11 +77,7 @@ const FlightCard = ({
               {/* Second flight */}
               <div className="col-span-4 grid grid-cols-4 gap-6">
                 <div className="flex justify-center">
-                  <img
-                    src="/api/placeholder/32/32"
-                    alt="Lufthansa logo"
-                    className="w-8 h-8"
-                  />
+                  <Plane className="w-8 h-8 text-red-600 mr-3" />
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900">
